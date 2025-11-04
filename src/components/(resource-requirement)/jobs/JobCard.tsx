@@ -284,11 +284,11 @@ export function JobPostingCard({
               Bill Rate:
               <span className="font-semibold pl-1 text-black">
                 {min_bill_rate === max_bill_rate
-                  ? formatCurrency(min_bill_rate, billing_currency)
+                  ? formatCurrency(min_bill_rate, billing_currency ?? "USD")
                   : `${formatCurrency(
                       min_bill_rate,
-                      billing_currency
-                    )} - ${formatCurrency(max_bill_rate, billing_currency)}`}
+                      billing_currency ?? "USD"
+                    )} - ${formatCurrency(max_bill_rate, billing_currency ?? "USD")}`}
                 <span className="text-(--muted-foreground) text-xs lowercase">
                   {billing_frequency ? ` / ${billing_frequency}` : ""}
                 </span>

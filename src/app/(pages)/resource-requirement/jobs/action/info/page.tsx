@@ -65,13 +65,6 @@ export default function Info() {
       inactiveImage: "/assets/icons/job-listing/candidate_summary.svg",
       bgColor: "bg-[#FF9B10]",
     },
-    // {
-    //   value: '2',
-    //   label: "",
-    //   theme: "sourcing" as tabTheme,
-    //   activeImage: "/assets/icons/job-listing/sourcing.svg",
-    //   inactiveImage: "/assets/icons/job-info/sourcing_w.svg",
-    // },
     {
       value: "3",
       label: "",
@@ -189,7 +182,9 @@ export default function Info() {
         </Button>
         <Badge
           variant="secondary"
-          className={`rounded-sm text-sm ${getStatusColor(data?.state ?? "Open")}`}
+          className={`rounded-sm text-sm ${getStatusColor(
+            data?.state ?? "Open"
+          )}`}
         >
           {data?.state}
         </Badge>
@@ -292,10 +287,7 @@ export default function Info() {
                   <ChatInterface />
                 </TabsContent>
                 <TabsContent value="6">
-                  <JD
-                    setFullscreenSection={setFullscreenSection}
-                    isFull={fullscreenSection === "tab"}
-                  />
+                  <JD />
                 </TabsContent>
               </Tabs>
             </Card>

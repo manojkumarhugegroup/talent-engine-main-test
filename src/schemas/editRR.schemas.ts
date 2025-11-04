@@ -116,7 +116,7 @@ export const formSchema = baseFormSchema
       certifications: z.array(certificateSchema),
       visa_requirements: z.string(),
       key_skills: z.array(z.string()).min(1, { message: "At least one key skills is required" }),
-      special_notes: z.string(),
+      special_notes: z.string().optional(),
       skills_and_experience: z.array(tableDataSchemaTwo),
       tools_familarity: z.array(tableDataSchema),
       language_requirement: z.array(languageSchema),

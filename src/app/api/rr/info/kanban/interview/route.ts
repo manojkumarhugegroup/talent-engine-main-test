@@ -18,14 +18,15 @@ export async function GET(req: Request) {
     if (incomingCookies) {
       forwardHeaders["Cookie"] = incomingCookies;
     }
-// ?candidate_id=RR-0102&job_id=RR-25-0100 
     const {
       data,
       headers: responseHeaders,
       status,
     } = await frappeGet(
       // `/api/method/get_interview_details?job_id=${jobID ?? ""}&candidate_id=${candidateID ?? ""}`,
-      `/api/method/get_interview_details?candidate_id=${candidateID ?? ""}&job_id=${jobID ?? ""}`,
+      `/api/method/get_interview_details?candidate_id=${
+        candidateID ?? ""
+      }&job_id=${jobID ?? ""}`,
       {
         headers: forwardHeaders,
       }

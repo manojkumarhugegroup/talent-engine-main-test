@@ -24,7 +24,10 @@ export function formatCurrency(
   currency: string = "USD"
 ): string {
   // Safely convert to number
-  const numericAmount = Number(amount);
+  const numericAmount = Number(amount) || 0;
+  if (amount === null) {
+    return "Invalid amount";
+  }
 
   // If amount is not a valid number, return a safe default
   if (isNaN(numericAmount)) {
